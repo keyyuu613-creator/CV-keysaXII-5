@@ -4,161 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Keysa Almalika</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
+        /* CSS Langsung di dalam File */
+        :root {
+            --pink-dark: #d81b60;
+            --pink-medium: #f06292;
+            --pink-light: #fce4ec;
+            --text-color: #4a4a4a;
+        }
+
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fff5f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--pink-light);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
         }
 
-        .pink-gradient {
-            background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
-        }
-
-        .card {
-            background: white;
+        .container {
+            background-color: white;
+            max-width: 800px;
+            width: 100%;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(255, 175, 189, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 5px solid var(--pink-medium);
         }
 
-        .section-title {
-            color: #d63384;
-            border-bottom: 2px solid #ffafbd;
-            display: inline-block;
-            margin-bottom: 1rem;
+        /* Header / Profil */
+        .header {
+            background-color: var(--pink-medium);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
         }
 
         .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
             border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            object-fit: cover;
+            background-color: #fff;
+            margin-bottom: 15px;
         }
+
+        .header h1 {
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        /* Layout Utama */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Kolom Kiri & Kanan */
+        h3 {
+            color: var(--pink-dark);
+            border-bottom: 2px solid var(--pink-light);
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--pink-dark);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            background-color: var(--pink-medium);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+
+        .about-me {
+            line-height: 1.6;
+            text-align: justify;
+        }
+
     </style>
 </head>
-<body class="py-10 px-4">
+<body>
 
-    <div class="max-w-4xl mx-auto card overflow-hidden">
-        <!-- Header / Banner -->
-        <div class="pink-gradient p-8 text-white text-center md:flex md:items-center md:text-left md:justify-between">
-            <div class="flex flex-col items-center md:flex-row gap-6">
-                <!-- Profile Image -->
-                <div class="w-32 h-32 rounded-full overflow-hidden profile-img bg-pink-100 flex items-center justify-center">
-                    <i class="fas fa-user text-pink-300 text-6xl"></i>
-                    <!-- Jika ingin menggunakan foto asli, ganti baris di atas dengan: 
-                    <img src="URL_FOTO_ANDA" alt="Keysa Almalika" class="w-full h-full object-cover"> 
-                    -->
-                </div>
-                <div>
-                    <h1 class="text-3xl font-bold">Keysa Almalika</h1>
-                    <p class="text-pink-100 italic">"Saya adalah pribadi yang percaya diri, adaptif, dan selalu bersemangat untuk memberikan hasil terbaik dalam setiap tantangan."</p>
-                </div>
-            </div>
-            <div class="mt-6 md:mt-0 space-y-2 text-sm">
-                <p><i class="fas fa-calendar-alt w-6"></i> 16 September 2008</p>
-                <p><i class="fas fa-phone w-6"></i> +62 83824676541</p>
-                <p><i class="fas fa-map-marker-alt w-6"></i> Kp. Bojong Cibodas RT03/RW07</p>
-            </div>
-        </div>
+<div class="container">
+    <div class="header">
+        <img src="WhatsApp Image 2026-02-07 at 11.15.03.jpeg" alt="Foto Keysa Almalika" class="profile-img">
+        <h1>Keysa Almalika</h1>
+        <p class="tagline">"Siap melangkah dengan percaya diri dan semangat tinggi."</p>
+    </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
-            <!-- Sidebar -->
-            <div class="bg-pink-50 p-8 space-y-8">
-                <!-- Kontak & Sosmed -->
-                <section>
-                    <h3 class="font-bold text-pink-600 uppercase tracking-wider mb-4">Media Sosial</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3">
-                            <i class="fab fa-instagram text-pink-500"></i>
-                            <span class="text-gray-700">@keysaall</span>
-                        </li>
-                        <li class="flex items-center gap-3 opacity-50">
-                            <i class="fab fa-facebook text-pink-500"></i>
-                            <span class="text-gray-700">-</span>
-                        </li>
-                        <li class="flex items-center gap-3 opacity-50">
-                            <i class="fab fa-tiktok text-pink-500"></i>
-                            <span class="text-gray-700">-</span>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- Keahlian -->
-                <section>
-                    <h3 class="font-bold text-pink-600 uppercase tracking-wider mb-4">Keahlian</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-pink-200 text-pink-700 px-3 py-1 rounded-full text-sm font-medium">Berenang</span>
-                    </div>
-                </section>
-
-                <!-- Bahasa -->
-                <section>
-                    <h3 class="font-bold text-pink-600 uppercase tracking-wider mb-4">Bahasa</h3>
-                    <div class="space-y-2 text-gray-700">
-                        <p class="flex justify-between"><span>Indonesia</span> <span class="text-pink-400 font-bold">●●●●●</span></p>
-                        <p class="flex justify-between"><span>Inggris</span> <span class="text-pink-400 font-bold">●●●○○</span></p>
-                    </div>
-                </section>
-
-                <!-- Hobby -->
-                <section>
-                    <h3 class="font-bold text-pink-600 uppercase tracking-wider mb-4">Hobby</h3>
-                    <ul class="list-disc list-inside text-gray-700">
-                        <li>Renang</li>
-                        <li>Memasak</li>
-                    </ul>
-                </section>
-            </div>
-
-            <!-- Main Content -->
-            <div class="md:col-span-2 p-8 space-y-8">
-                <!-- Pendidikan -->
-                <section>
-                    <h2 class="text-xl font-bold section-title">Riwayat Pendidikan</h2>
-                    <div class="space-y-6 mt-4">
-                        <div class="relative pl-6 border-l-2 border-pink-200">
-                            <div class="absolute -left-1.5 top-1.5 w-3 h-3 bg-pink-400 rounded-full"></div>
-                            <h4 class="font-bold text-gray-800">SMA KP Baleendah</h4>
-                            <p class="text-pink-500 text-sm">Lulus Tahun 2026</p>
-                        </div>
-                        <div class="relative pl-6 border-l-2 border-pink-200">
-                            <div class="absolute -left-1.5 top-1.5 w-3 h-3 bg-pink-400 rounded-full"></div>
-                            <h4 class="font-bold text-gray-800">SMP KP Baleendah 2</h4>
-                            <p class="text-pink-500 text-sm">Lulus Tahun 2023</p>
-                        </div>
-                        <div class="relative pl-6 border-l-2 border-pink-200">
-                            <div class="absolute -left-1.5 top-1.5 w-3 h-3 bg-pink-400 rounded-full"></div>
-                            <h4 class="font-bold text-gray-800">SDN Malakasar</h4>
-                            <p class="text-pink-500 text-sm">Lulus Tahun 2020</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Pengalaman Organisasi -->
-                <section>
-                    <h2 class="text-xl font-bold section-title">Pengalaman Organisasi</h2>
-                    <div class="mt-4 p-4 bg-gray-50 rounded-lg text-gray-500 italic">
-                        Belum ada pengalaman organisasi saat ini.
-                    </div>
-                </section>
-
-                <!-- Sertifikat -->
-                <section>
-                    <h2 class="text-xl font-bold section-title">Sertifikat</h2>
-                    <div class="mt-4 p-4 bg-gray-50 rounded-lg text-gray-500 italic text-center">
-                        <i class="fas fa-certificate mb-2 text-2xl text-pink-200"></i>
-                        <p>Belum ada sertifikat terlampir.</p>
-                    </div>
-                </section>
+    <div class="main-content">
+        <div class="sidebar">
+            <h3>Kontak</h3>
+            <div class="info-item"><strong>Telepon:</strong> +62 83824676541</div>
+            <div class="info-item"><strong>Alamat:</strong> Kp. Bojong Cibodas RT03/RW07</div>
+            <div class="info-item"><strong>Instagram:</strong> @keysaall</div>
+            
+            <h3>Pribadi</h3>
+            <div class="info-item"><strong>Lahir:</strong> 16 September 2008</div>
+            <div class="info-item"><strong>Hobby:</strong> Renang & Memasak</div>
+            <div class="info-item"><strong>Bahasa:</strong> 
+                <span class="badge">Indonesia</span> 
+                <span class="badge">B. Inggris</span>
             </div>
         </div>
-        
-        <!-- Footer -->
-        <div class="p-4 bg-gray-100 text-center text-xs text-gray-400">
-            &copy; 2024 Keysa Almalika - Dibuat dengan penuh rasa percaya diri.
+
+        <div class="content">
+            <h3>Tentang Diri</h3>
+            <p class="about-me">
+                Saya adalah pribadi yang sangat percaya diri dan memiliki semangat belajar yang tinggi. Saya percaya bahwa ketekunan dan sikap positif adalah kunci utama dalam meraih kesuksesan. Dengan latar belakang pendidikan yang solid, saya siap memberikan kontribusi terbaik di lingkungan manapun.
+            </p>
+
+            <h3>Pendidikan</h3>
+            <ul>
+                <li><strong>SMA KP Baleendah</strong><br>Lulus Tahun 2026</li>
+                <li><strong>SMP KP Baleendah 2</strong><br>Lulus Tahun 2023</li>
+                <li><strong>SDN Malakasar</strong><br>Lulus Tahun 2020</li>
+            </ul>
+
+            <h3>Keahlian</h3>
+            <p>Memiliki kemampuan dalam olahraga khususnya <strong>Berenang</strong>.</p>
+
+            <h3>Pengalaman & Sertifikat</h3>
+            <p><em>Fokus pada pengembangan diri di masa sekolah (Data belum tersedia).</em></p>
         </div>
     </div>
+</div>
 
 </body>
 </html>
